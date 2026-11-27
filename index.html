@@ -2,292 +2,85 @@
 <html lang="ky">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f3eb">
-  <meta name="description" content="Умар менен Аишанын үйлөнүү тоюна чакыруу">
-  <title>Умар & Аиша — Тойго чакыруу</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e8">
+  <meta name="description" content="Умар & Аиша — үйлөнүү тоюна чакыруу">
+  <title>Умар &amp; Аиша</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Noto+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ivory:#f6f1e8;--gold:#92764b;--ink:#57452e;--serif:'Noto Serif',Georgia,serif;--script:'Cormorant Garamond',Georgia,serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--ivory)}body{margin:0;color:var(--ink);background:var(--ivory);font-family:var(--serif);-webkit-font-smoothing:antialiased}button{font:inherit}
+    .screen{position:relative;min-height:100svh;overflow:hidden;isolation:isolate}.cover{height:100svh;display:grid;place-items:center;background:#eee7dc;cursor:pointer}.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform 2.2s cubic-bezier(.2,.7,.2,1),filter 1.8s;will-change:transform}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(45,34,22,.20));pointer-events:none}.cover.opening .cover-image{transform:scale(1.055);filter:brightness(1.08)}
+    .open-cta{position:absolute;z-index:2;bottom:max(7vh,34px);left:50%;transform:translateX(-50%);border:1px solid rgba(255,255,255,.82);border-radius:999px;padding:13px 25px;color:#fff;background:rgba(78,61,39,.2);backdrop-filter:blur(8px);font:300 11px/1 Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .3s,letter-spacing .3s}.open-cta:hover{background:rgba(78,61,39,.38);letter-spacing:.25em}.seal-glow{position:absolute;z-index:1;left:50%;top:54%;width:clamp(50px,12vw,110px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(255,233,174,.85),rgba(213,174,99,.35) 45%,transparent 72%)}.opening .seal-glow{animation:seal 1.5s ease-out forwards}@keyframes seal{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}35%{opacity:.9}100%{opacity:0;transform:translate(-50%,-50%) scale(2.4)}}
+    .page-two{display:grid;place-items:center;background:#eee8df;opacity:0;transform:translateY(20px);transition:opacity 1.4s ease,transform 1.4s ease}.page-two.visible{opacity:1;transform:none}.page-two img{position:absolute;width:100%;height:100%;object-fit:contain}.page-two:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(240,211,148,.14),transparent 58%)}.gold-dust{position:absolute;inset:0;pointer-events:none;overflow:hidden}.gold-dust i{position:absolute;width:3px;height:3px;background:#d6b978;border-radius:50%;opacity:0;box-shadow:0 0 12px 3px rgba(211,179,119,.5);animation:drift 7s linear infinite}.gold-dust i:nth-child(1){left:18%;top:78%;animation-delay:0s}.gold-dust i:nth-child(2){left:74%;top:70%;animation-delay:2s}.gold-dust i:nth-child(3){left:46%;top:88%;animation-delay:4s}.gold-dust i:nth-child(4){left:83%;top:48%;animation-delay:1s}@keyframes drift{0%{opacity:0;transform:translateY(0)}20%{opacity:.55}80%{opacity:.45}100%{opacity:0;transform:translateY(-42vh)}}
+    .invitation{display:grid;place-items:center;background:#f2eee7}.invitation-art{position:absolute;width:100%;height:100%;object-fit:contain}.invitation-copy{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:min(79%,680px);height:59%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(6px,2vw,20px);color:var(--gold);animation:copyIn 1.8s .2s both}.invitation-copy>*{margin:0}.names{font:500 clamp(38px,8vw,82px)/1.02 var(--script);letter-spacing:.01em;color:#876b42;margin-bottom:clamp(12px,2.4vh,24px);text-shadow:0 1px 0 rgba(255,255,255,.6)}.ornament{height:1px;width:62px;background:linear-gradient(90deg,transparent,#b39765,transparent);margin:0 auto clamp(12px,2.2vh,22px)}.verse{font:500 clamp(10px,2.35vw,18px)/1.8 var(--serif);letter-spacing:.015em;color:#68543a}.event{margin-top:clamp(14px,2.6vh,27px);font:400 clamp(12px,2.6vw,19px)/1.8 Montserrat,sans-serif;letter-spacing:.06em;color:#68543a}.hosts{margin-top:clamp(10px,2vh,20px);font:500 clamp(15px,3.8vw,28px)/1.2 var(--script);color:#876b42}.music{position:fixed;z-index:5;right:max(16px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:8px;padding:11px 15px;border:1px solid rgba(146,118,75,.38);border-radius:99px;background:rgba(250,247,241,.88);color:#735d3d;backdrop-filter:blur(10px);font:400 10px Montserrat,sans-serif;letter-spacing:.12em;cursor:pointer;box-shadow:0 4px 20px rgba(65,49,28,.08)}.music[hidden]{display:none}.music-mark{font-size:15px}.petal{position:fixed;z-index:3;top:-10vh;left:var(--x);width:9px;height:13px;border-radius:100% 0 100% 0;background:rgba(255,255,255,.72);filter:drop-shadow(0 1px 2px rgba(124,101,70,.15));pointer-events:none;animation:fall var(--duration) linear var(--delay) infinite;opacity:0}@keyframes fall{0%{transform:translate3d(0,-5vh,0) rotate(0);opacity:0}12%{opacity:.65}85%{opacity:.55}100%{transform:translate3d(var(--sway),110vh,0) rotate(360deg);opacity:0}}@keyframes copyIn{from{opacity:0;filter:blur(5px);transform:translate(-50%,12px)}to{opacity:1;filter:blur(0);transform:translate(-50%,0)}}
+    @media(min-width:800px){.cover-image,.page-two img,.invitation-art{object-fit:contain}.invitation-copy{top:14%;height:60%}.verse{font-size:18px}.names{font-size:82px}}
+    @media(max-height:650px){.invitation-copy{top:12%;height:62%}.names{margin-bottom:8px}.ornament{margin-bottom:8px}.event{margin-top:8px}.hosts{margin-top:7px}.verse{line-height:1.55}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
 </head>
-
 <body>
-
-  <!-- БИРИНЧИ ЭКРАН: КОНВЕРТ -->
-
-  <section class="envelope-screen" id="envelopeScreen">
-
-    <img
-      class="envelope-photo"
-      src="assets/envelope.jpeg"
-      alt="Чакыруу конверти"
-    >
-
-    <div class="envelope-shade"></div>
-
-    <div class="envelope-message">
-
-      <p class="eyebrow">СИЗ ҮЧҮН АТАЙЫН ДАЯРДАЛДЫ</p>
-
-      <h1>Сизди тойго чакырабыз</h1>
-
-      <p class="envelope-names">
-        Умар <span>&</span> Аиша
-      </p>
-
-      <button class="open-button" id="openInvitation">
-        <span class="button-flower">✿</span>
-        Чакыруу катын ачуу
-      </button>
-
-      <p class="tap-hint">
-        Конвертти ачуу үчүн басыңыз
-      </p>
-
-    </div>
+  <section class="screen cover" id="cover" aria-label="Open Your Invitation">
+    <img class="cover-image" src="IMG_9764.jpeg" alt="Ivory wedding envelope with golden wax seal and white flowers">
+    <span class="seal-glow" aria-hidden="true"></span>
+    <button class="open-cta" id="openInvitation" type="button">Open Your Invitation</button>
   </section>
 
-
-  <!-- НЕГИЗГИ ЧАКЫРУУ БАРАГЫ -->
-
-  <main id="invitation" class="invitation hidden">
-
-    <!-- БАШКЫ БӨЛҮК -->
-
-    <header class="hero">
-
-      <div class="hero-inner">
-
-        <p class="eyebrow">
-          ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ
-        </p>
-
-        <h1 class="couple-names">
-          Умар <span>&</span> Аиша
-        </h1>
-
-        <div class="gold-line">
-          <span>✦</span>
-        </div>
-
-        <p class="hero-date">
-          26 · 06 · 2026
-        </p>
-
-        <p class="hero-note">
-          Жашообуздагы эң бактылуу күндү
-          <br>
-          сиздер менен бөлүшкүбүз келет
-        </p>
-
-        <a href="#invitationText" class="scroll-link">
-          ↓
-        </a>
-
-      </div>
-    </header>
-
-
-    <!-- ЧАКЫРУУ ТЕКСТИ -->
-
-    <section class="intro section" id="invitationText">
-
-      <p class="eyebrow">
-        УРМАТТУУ КОНУГУБУЗ!
-      </p>
-
-      <h2>
-        Сизди кубанычыбызга ортоктош болууга чакырабыз
-      </h2>
-
-      <p class="body-copy">
-        Өмүрүбүздөгү өзгөчө күндө сиздин катышууңуз
-        биз үчүн чоң сыймык жана кубаныч болот.
-      </p>
-
-      <p class="body-copy invitation-quote">
-        «Тойго келип, кадырлуу коногубуз болуп кетиңиз!»
-      </p>
-
-      <div class="small-ornament">❦</div>
-
+  <main id="story" hidden>
+    <section class="screen page-two" id="rings" aria-label="Wedding rings">
+      <img src="IMG_9765.jpeg" alt="The couple's hands wearing wedding rings">
+      <div class="gold-dust" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </section>
-
-
-    <!-- ЖУБАЙЛАРДЫН СҮРӨТҮ -->
-
-    <section class="photo-feature">
-
-      <img
-        src="assets/couple-frame.jpeg"
-        alt="Умар жана Аиша"
-        loading="lazy"
-      >
-
-      <div class="photo-caption">
-        Эки жүрөк — бир тагдыр
-      </div>
-
-    </section>
-
-
-    <!-- ТОЙДУН МААЛЫМАТТАРЫ -->
-
-    <section class="details section">
-
-      <p class="eyebrow">
-        БАКТЫЛУУ КҮНҮБҮЗ
-      </p>
-
-      <h2>Тойдун маалыматы</h2>
-
-      <div class="detail-grid">
-
-        <article class="detail-card">
-
-          <span class="detail-icon">✧</span>
-
-          <p class="detail-label">КҮНҮ</p>
-
-          <h3>26-июнь, 2026-жыл</h3>
-
-        </article>
-
-
-        <article class="detail-card">
-
-          <span class="detail-icon">◷</span>
-
-          <p class="detail-label">УБАКТЫСЫ</p>
-
-          <h3>17:00</h3>
-
-        </article>
-
-
-        <article class="detail-card detail-card-wide">
-
-          <span class="detail-icon">⌖</span>
-
-          <p class="detail-label">ӨТҮҮЧҮ ЖЕРИ</p>
-
-          <h3>«Мейкин» рестораны</h3>
-
-          <p>Бишкек шаары</p>
-
-          <a
-            class="map-link"
-            href="https://www.google.com/maps/search/?api=1&query=Мейкин+ресторан+Бишкек"
-            target="_blank"
-            rel="noopener"
-          >
-            Картадан көрүү ↗
-          </a>
-
-        </article>
-
+    <section class="screen invitation" id="invitation" aria-label="Wedding invitation">
+      <img class="invitation-art" src="IMG_9766.jpeg" alt="White floral wedding invitation artwork with the couple at the bottom">
+      <div class="invitation-copy">
+        <h1 class="names">Умар &amp; Аиша</h1>
+        <div class="ornament" aria-hidden="true"></div>
+        <p class="verse">БИРГЕ БОЛУП ТИЛЕГИБИЗ ОЮБУЗ,<br>БЕЛГИЛЕНДИ ҮЛПӨТ КУРЧУ ТОЮБУЗ.<br>ЧАКЫРАБЫЗ КЕЛИП, БИЗДИН КЕЧЕГЕ,<br>ТӨРҮБҮЗДӨ СЫЙЛУУ МЕЙМАН БОЛУҢУЗ.</p>
+        <p class="event">26.06.2026<br>17:00<br>Мейкин рестораны</p>
+        <p class="hosts">Миразим &amp; Айпери</p>
       </div>
     </section>
-
-
-    <!-- КОЛДОРДУН СҮРӨТҮ -->
-
-    <section class="photo-wide">
-
-      <img
-        src="assets/hands.jpeg"
-        alt="Жубайлардын колдору"
-        loading="lazy"
-      >
-
-    </section>
-
-
-    <!-- ТОЙ ЭЭЛЕРИ -->
-
-    <section class="hosts section">
-
-      <p class="eyebrow">
-        ТОЙ ЭЭЛЕРИ
-      </p>
-
-      <h2>Шамшидин &amp; Зийнат</h2>
-
-      <p class="body-copy">
-        Сиздерди үй-бүлөбүздүн кубанычтуу күнүнө күтөбүз!
-      </p>
-
-      <div class="small-ornament">❦</div>
-
-    </section>
-
-
-    <!-- ШАКЕКТЕРДИН СҮРӨТҮ -->
-
-    <section class="photo-feature rings-feature">
-
-      <img
-        src="assets/rings.jpeg"
-        alt="Үйлөнүү шакектери"
-        loading="lazy"
-      >
-
-    </section>
-
-
-    <!-- АКЫРКЫ БӨЛҮК -->
-
-    <footer class="footer section">
-
-      <p class="eyebrow">
-        СҮЙҮҮ МЕНЕН
-      </p>
-
-      <h2>
-        Умар <span>&</span> Аиша
-      </h2>
-
-      <p>
-        Келгениңиздерге кубанычтабыз!
-      </p>
-
-      <div class="footer-flower">✿</div>
-
-    </footer>
-
   </main>
 
-
-  <!-- МУЗЫКА -->
-
-  <audio
-    id="weddingMusic"
-    src="assets/wedding-music.mp3"
-    preload="auto"
-    loop
-  ></audio>
-
-
-  <!-- МУЗЫКАНЫ БАШКАРУУ -->
-
-  <button
-    class="music-button"
-    id="musicButton"
-    type="button"
-    hidden
-  >
-
-    <span class="music-icon">♫</span>
-
-    <span id="musicLabel">Музыка</span>
-
-  </button>
-
-
-  <script src="script.js"></script>
-
+  <audio id="weddingMusic" src="leberch-invitation-wedding-375839.mp3" preload="auto" loop></audio>
+  <button class="music" id="musicButton" type="button" aria-label="Turn music off" hidden><span class="music-mark" aria-hidden="true">♫</span><span id="musicLabel">Music on</span></button>
+  <script>
+    const cover=document.getElementById('cover');
+    const openButton=document.getElementById('openInvitation');
+    const story=document.getElementById('story');
+    const rings=document.getElementById('rings');
+    const music=document.getElementById('weddingMusic');
+    const musicButton=document.getElementById('musicButton');
+    const musicLabel=document.getElementById('musicLabel');
+    let opened=false;
+    function sprinklePetals(){
+      for(let i=0;i<9;i++){
+        const petal=document.createElement('span');petal.className='petal';
+        petal.style.setProperty('--x',`${Math.random()*100}vw`);
+        petal.style.setProperty('--duration',`${12+Math.random()*12}s`);
+        petal.style.setProperty('--delay',`${Math.random()*-24}s`);
+        petal.style.setProperty('--sway',`${Math.round(Math.random()*100-50)}px`);
+        document.body.appendChild(petal);
+      }
+    }
+    openButton.addEventListener('click',async()=>{
+      if(opened)return;opened=true;cover.classList.add('opening');openButton.disabled=true;
+      try{await music.play();musicButton.hidden=false;musicLabel.textContent='Music on';musicButton.setAttribute('aria-label','Turn music off')}catch(e){musicButton.hidden=false;musicLabel.textContent='Play music';musicButton.setAttribute('aria-label','Turn music on')}
+      window.setTimeout(()=>{
+        story.hidden=false;requestAnimationFrame(()=>rings.classList.add('visible'));
+        sprinklePetals();
+        window.setTimeout(()=>rings.scrollIntoView({behavior:'smooth',block:'start'}),180);
+      },1250);
+    });
+    musicButton.addEventListener('click',async()=>{
+      if(music.paused){try{await music.play();musicLabel.textContent='Music on';musicButton.setAttribute('aria-label','Turn music off')}catch(e){musicLabel.textContent='Play music'}}
+      else{music.pause();musicLabel.textContent='Music off';musicButton.setAttribute('aria-label','Turn music on')}
+    });
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting&&entry.target.id==='invitation')entry.target.classList.add('arrived')}),{threshold:.15});
+    observer.observe(document.getElementById('invitation'));
+  </script>
 </body>
 </html>
